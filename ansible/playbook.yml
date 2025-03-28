@@ -1,0 +1,10 @@
+---
+#wsl ansible-playbook -i inventory playbook.yml
+# ssh -i "C:\Users\valar\.ssh\terraform_20250320" ubuntu@158.160.102.71
+- name: Configure database servers
+  hosts: web
+  become: yes
+  roles:
+    - role: common
+    - role: docker
+

@@ -1,0 +1,14 @@
+---
+- name: Ensure destination directory exists
+  file:
+    path: /home/ubuntu/backend
+    state: directory
+    mode: '0755'
+
+- name: Copy backend folder to VM
+  copy:
+    src: ../backend/
+    dest: /home/ubuntu/backend
+    owner: ubuntu
+    group: ubuntu
+    mode: '0755'
